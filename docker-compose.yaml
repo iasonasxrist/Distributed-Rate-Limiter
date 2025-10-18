@@ -1,17 +1,18 @@
 services:
-  lb:
+  load-balancer:
     image: nginx:1.27
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
     ports: ["8080:80"]
-    depends_on: [api, redis, etcd]
+    depends_on: [ratelimiting-service, redis, etcd, postgres-db]
 
-  api:
-    build: ./RateLimitingApi
+  ratelimiting-service:
+    build: ./RateLimitingProject/RateLimitingApi/
     environment:
       ASPNETCORE_URLS: http://+:80
       ConnectionStrings__Redis: redis:6379
-    depends_on: [redis]
+      ConnectionStrings__Database: Host=postgres;Database=ratelimit;Username=postgres;Password=password
+    depends_on: [redis, postgres-db]
 
   redis:
     image: redis:7
@@ -24,3 +25,28 @@ services:
       - ALLOW_NONE_AUTHENTICATION=yes
       - ETCD_ENABLE_V2=true
     ports: ["2379:2379", "2380:2380"]
+
+  postgres-db:
+    image: postgres:15
+    environment:
+      POSTGRES_DB: ratelimit
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+    ports: ["5432:5432"]
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
+
+  # zipkin:
+  #   image: openzipkin/zipkin
+  #   ports: ["9411:9411"]
+
+  # prometheus:
+  #   image: prom/prometheus
+  #   ports: ["9090:9090"]
+  #   volumes:
+  #     - ./monitoring/prometheus.yml:/etc/prometheus/prometheus.yml
+
+  # grafana:
+  #   image: grafana/grafana
+  #   ports: ["3000:3000"]
+  #   depends_on: [prometheus]
