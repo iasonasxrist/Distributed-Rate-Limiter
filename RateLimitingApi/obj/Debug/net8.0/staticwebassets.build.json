@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "b16kEX2FFc/YUZMyAlvF5cCsgoDdUZoIYJdrtZo85Es=",
+  "Source": "RateLimitingApi",
+  "BasePath": "_content/RateLimitingApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

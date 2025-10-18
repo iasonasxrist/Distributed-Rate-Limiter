@@ -1,0 +1,12 @@
+/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/bin/Debug/net8.0/RateLimiting.Domain.deps.json
+/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/bin/Debug/net8.0/RateLimiting.Domain.dll
+/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/bin/Debug/net8.0/RateLimiting.Domain.pdb
+/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/obj/Debug/net8.0/RateLimiting.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/obj/Debug/net8.0/RateLimiting.Domain.AssemblyInfoInputs.cache
+/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/obj/Debug/net8.0/RateLimiting.Domain.AssemblyInfo.cs
+/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/obj/Debug/net8.0/RateLimiting.Domain.csproj.CoreCompileInputs.cache
+/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/obj/Debug/net8.0/RateLimiting.Domain.sourcelink.json
+/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/obj/Debug/net8.0/RateLimiting.Domain.dll
+/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/obj/Debug/net8.0/refint/RateLimiting.Domain.dll
+/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/obj/Debug/net8.0/RateLimiting.Domain.pdb
+/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/obj/Debug/net8.0/ref/RateLimiting.Domain.dll
