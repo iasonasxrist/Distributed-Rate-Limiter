@@ -1,4 +1,5 @@
 using System.Collections.Concurrent;
+using System.Collections.Generic;
 using System.Linq;
 using RateLimiting.Domain.Contracts;
 using RateLimiting.Infrastructure.Options;

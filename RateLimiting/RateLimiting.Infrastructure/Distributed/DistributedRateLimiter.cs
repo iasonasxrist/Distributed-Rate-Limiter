@@ -17,7 +17,9 @@ public sealed class DistributedRateLimiter : IDistributedRateLimiter
         if (options == null) throw new ArgumentNullException(nameof(options));
         if (factory == null) throw new ArgumentNullException(nameof(factory));
 
-        var algorithms = options.Algorithms.Count == 0
+        var configuredAlgorithms = options.Algorithms ?? new List<RateLimiterAlgorithmOptions>();
+
+        var algorithms = configuredAlgorithms.Count == 0
             ? new List<RateLimiterAlgorithmOptions>
             {
                 new()
@@ -29,7 +31,7 @@ public sealed class DistributedRateLimiter : IDistributedRateLimiter
                     Enabled = true
                 }
             }
-            : options.Algorithms.Where(a => a.Enabled).ToList();
+            : configuredAlgorithms.Where(a => a.Enabled).ToList();
 
         if (algorithms.Count == 0)
         {
@@ -53,7 +55,7 @@ public sealed class DistributedRateLimiter : IDistributedRateLimiter
             return RateLimitDecision.AllowedDecision("local");
         }
 
-        var index = Math.Abs(Interlocked.Increment(ref _nextNodeIndex)) % _nodes.Count;
+        var index = (int)((uint)Interlocked.Increment(ref _nextNodeIndex) % (uint)_nodes.Count);
         var node = _nodes[index];
         return node.Evaluate(requestInfo);
     }
