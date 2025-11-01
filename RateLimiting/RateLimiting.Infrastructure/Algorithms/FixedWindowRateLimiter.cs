@@ -1,17 +1,17 @@
 using System;
-using System.Collections.Generic;
 using RateLimiting.Domain.Contracts;
 
 namespace RateLimiting.Infrastructure.Algorithms;
 
-public sealed class SlidingWindowRateLimiter : IRateLimiter
+public sealed class FixedWindowRateLimiter : IRateLimiter
 {
     private readonly object _lockObj = new();
-    private readonly Queue<long> _events = new();
     private readonly long _windowSizeMs;
     private readonly int _maxRequests;
+    private long _windowStart;
+    private int _requestCount;
 
-    public SlidingWindowRateLimiter(string name, int maxRequests, TimeSpan windowSize)
+    public FixedWindowRateLimiter(string name, int maxRequests, TimeSpan windowSize)
     {
         if (string.IsNullOrWhiteSpace(name)) throw new ArgumentException("Name cannot be null or whitespace", nameof(name));
         if (maxRequests <= 0) throw new ArgumentOutOfRangeException(nameof(maxRequests));
@@ -20,11 +20,11 @@ public sealed class SlidingWindowRateLimiter : IRateLimiter
         Name = name;
         _maxRequests = maxRequests;
         _windowSizeMs = (long)windowSize.TotalMilliseconds;
+        _windowStart = NowMs;
     }
 
     public string Name { get; }
 
-    //use monotonic clock to avoid wall-clock jumps
     private static long NowMs => Environment.TickCount64;
 
     public RateLimitCheckResult Evaluate(RequestInfo requestInfo)
@@ -32,25 +32,22 @@ public sealed class SlidingWindowRateLimiter : IRateLimiter
         lock (_lockObj)
         {
             var now = NowMs;
-            EvictExpired(now);
+            var elapsed = now - _windowStart;
 
-            if (_events.Count < _maxRequests)
+            if (elapsed >= _windowSizeMs)
             {
-                _events.Enqueue(now);
+                _windowStart = now;
+                _requestCount = 0;
+            }
+
+            if (_requestCount < _maxRequests)
+            {
+                _requestCount++;
                 return RateLimitCheckResult.Allow(Name);
             }
 
-            var oldest = _events.Peek();
-            var waitMs = Math.Max(0, (oldest + _windowSizeMs) - now);
+            var waitMs = Math.Max(0, _windowSizeMs - elapsed);
             return RateLimitCheckResult.Deny(TimeSpan.FromMilliseconds(waitMs), Name);
-        }
-    }
-
-    private void EvictExpired(long now)
-    {
-        while (_events.Count > 0 && now - _events.Peek() >= _windowSizeMs)
-        {
-            _events.Dequeue();
         }
     }
 }

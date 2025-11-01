@@ -7,5 +7,6 @@ public record struct RequestInfo(
         string? Method = null,
         string? UserId = null,
         string? ApiKey = null,
-        string? CorrelationId = null
+        string? CorrelationId = null,
+        string? ClientId = null
     );

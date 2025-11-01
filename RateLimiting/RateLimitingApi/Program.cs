@@ -1,7 +1,7 @@
-using Microsoft.AspNetCore.RateLimiting;
+using System.Linq;
 using Microsoft.Extensions.Options;
 using RateLimiting.Domain.Contracts;
-using RateLimiting.Infrastructure.Algorithms;
+using RateLimiting.Infrastructure.Distributed;
 using RateLimiting.Infrastructure.Options;
 
 namespace RateLimitingApi;
@@ -17,47 +17,26 @@ public class Program
         builder.Services.AddOptions<RateLimitingOptions>()
             .Bind(builder.Configuration.GetSection("RateLimiting"))
             .ValidateDataAnnotations()
-            .Validate(o=>o.MaxRequests> 0, "MaxRequests")
-            .Validate(o=>o.WindowSeconds>0, "WindowSeconds");
-        
-        
+            .Validate(options => options.Algorithms.Count == 0 || options.Algorithms.All(a => !string.IsNullOrWhiteSpace(a.Name)),
+                "Algorithm name must be provided")
+            .Validate(options => options.ClusterNodeCount > 0, "ClusterNodeCount must be positive");
+
+
         builder.Services.AddControllers();
         // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
-        builder.Services.AddSingleton(sp =>
+        builder.Services.AddSingleton<IRateLimiterFactory, DefaultRateLimiterFactory>();
+        builder.Services.AddSingleton<IDistributedRateLimiter>(sp =>
         {
             var cfg = sp.GetRequiredService<IOptions<RateLimitingOptions>>();
-            return new SlidingWindowRateLimiter(cfg.Value.MaxRequests,TimeSpan.FromSeconds(2));
+            var factory = sp.GetRequiredService<IRateLimiterFactory>();
+            return new DistributedRateLimiter(cfg.Value, factory);
         });
-        var rl1 = new SlidingWindowRateLimiter(2, TimeSpan.FromSeconds(2));
-        var rl2 = new SlidingWindowRateLimiter(2, TimeSpan.FromSeconds(2));
-        for (int i=1; i <= 10; i++)
-        {
-            RequestInfo requestInfo = new()
-            {
-                RequestId = Guid.NewGuid().ToString(),
-                Path = "$/api/demo{i}",
-                Method = "GET",
-                UserId = "u42"
-            };
-            
-            var ok = rl1.TryIsAllowed( out var retryAfter, requestInfo);
-            
-            Console.WriteLine(ok
-                ? $"{i}: allowed"
-                : $"{i}: denied — retry after ~{retryAfter.TotalSeconds:F1}s");
-
-            if (i % 3 == 0)
-            {
-                Console.WriteLine("Sleeping 20s...");
-                Thread.Sleep(TimeSpan.FromSeconds(20));
-            }    
-        }
         var app = builder.Build();
 
-        app.UseSlidingWindowRateLimiting();
+        app.UseDistributedRateLimiting();
         
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
@@ -69,7 +48,6 @@ public class Program
         app.UseHttpsRedirection();
 
         app.UseAuthorization();
-
 
         app.MapControllers();
 
