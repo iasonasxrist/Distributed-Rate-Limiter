@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RulesService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c2c04aa341c9b39959b5f1e93b80a32201fd0598")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1d6b9c60c7a8227bccb4d82376ec2731d2b0e46")]
 [assembly: System.Reflection.AssemblyProductAttribute("RulesService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RulesService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

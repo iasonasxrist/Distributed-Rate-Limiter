@@ -1,20 +1,11 @@
-# Dockerfile for ASP.NET Core RateLimitingApi
-ARG DOTNET_VERSION=8.0
-FROM mcr.microsoft.com/dotnet/sdk:${DOTNET_VERSION}-bullseye AS build
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-
-# copy project file(s) and restore (assumes Dockerfile is inside the project folder)
-COPY *.csproj ./
-RUN dotnet restore
-
-# copy everything and publish
 COPY . .
-RUN dotnet publish -c Release -o /app/publish --no-restore
+RUN dotnet publish RateLimitingApi.csproj -c Release -o /out
 
-FROM mcr.microsoft.com/dotnet/aspnet:${DOTNET_VERSION}-bullseye AS runtime
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
-COPY --from=build /app/publish .
+COPY --from=build /out .
 ENV ASPNETCORE_URLS=http://+:80
 EXPOSE 80
-
-ENTRYPOINT ["dotnet", "RateLimitingApi.dll"]
+ENTRYPOINT ["dotnet","RateLimitingApi.dll"]

@@ -2,6 +2,17 @@
 /shelf/
 /workspace.xml
 *.xml
+.dll
+*.AssemblyInfo.cs
+*.pdb
+*.user
+*.suo
+*.cache
+*.log
+*.idea
+*.iml
+*.ipr
+*.iws
 # Rider ignored files
 /contentModel.xml
 /projectSettingsUpdater.xml
