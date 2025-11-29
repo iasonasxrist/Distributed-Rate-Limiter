@@ -35,14 +35,10 @@
 /Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RulesService/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll
 /Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RulesService/bin/Debug/net8.0/Pipelines.Sockets.Unofficial.dll
 /Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RulesService/bin/Debug/net8.0/StackExchange.Redis.dll
-/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RulesService/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll
 /Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RulesService/bin/Debug/net8.0/System.Diagnostics.EventLog.dll
 /Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RulesService/bin/Debug/net8.0/System.IO.Pipelines.dll
-/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RulesService/bin/Debug/net8.0/System.Text.Encodings.Web.dll
-/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RulesService/bin/Debug/net8.0/System.Text.Json.dll
 /Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RulesService/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll
 /Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RulesService/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll
-/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RulesService/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll
 /Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RulesService/obj/Debug/net8.0/RulesService.csproj.AssemblyReference.cache
 /Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RulesService/obj/Debug/net8.0/RulesService.GeneratedMSBuildEditorConfig.editorconfig
 /Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RulesService/obj/Debug/net8.0/RulesService.AssemblyInfoInputs.cache

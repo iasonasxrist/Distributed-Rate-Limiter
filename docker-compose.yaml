@@ -26,6 +26,12 @@ services:
       - ETCD_ENABLE_V2=true
     ports: ["2379:2379", "2380:2380"]
 
+  rules-daemon-service:
+    build: ./RulesService/
+    environment:
+      ASPNETCORE_URLS: http://+:80
+      ConnectionStrings__Redis: redis:6379
+    depends_on: [redis, postgres-db, etcd]
   postgres-db:
     image: postgres:15
     environment:

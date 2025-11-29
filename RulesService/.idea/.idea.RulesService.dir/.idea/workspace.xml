@@ -9,6 +9,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2d42d9e4-0483-4ee3-b6b2-5956615aaf5e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimiting.Domain/bin/Debug/net8.0/RateLimiting.Domain.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimiting.Domain/bin/Debug/net8.0/RateLimiting.Domain.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimiting.Domain/bin/Debug/net8.0/RateLimiting.Domain.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimiting.Domain/bin/Debug/net8.0/RateLimiting.Domain.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimiting.Domain/obj/Debug/net8.0/RateLimiting.Domain.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimiting.Domain/obj/Debug/net8.0/RateLimiting.Domain.AssemblyInfo.cs" afterDir="false" />
@@ -49,7 +51,6 @@
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimiting.Infrastructure/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimiting.Infrastructure/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimiting.Infrastructure/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimiting.Infrastructure/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimiting.Infrastructure/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimiting.Infrastructure/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/RateLimitingApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/RateLimitingApi.csproj" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/appsettings.Development.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/appsettings.json" afterDir="false" />
@@ -63,15 +64,8 @@
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/bin/Debug/net8.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/bin/Debug/net8.0/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.assets.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.genruntimeconfig.cache" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.genruntimeconfig.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/Debug/net8.0/RateLimitingApi.sourcelink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/RateLimitingApi.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/RateLimitingApi.csproj.nuget.dgspec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/RateLimitingApi.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/RateLimitingApi.csproj.nuget.g.targets" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/project.assets.json" afterDir="false" />
@@ -79,9 +73,70 @@
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/../RateLimiting/RateLimitingApi/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.RulesService.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RulesService.dir/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RulesService.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/RulesService.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RulesSyncWorker.cs" beforeDir="false" afterPath="$PROJECT_DIR$/RulesSyncWorker.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Binder.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Binder.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Configuration.CommandLine.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Configuration.CommandLine.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Configuration.EnvironmentVariables.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Configuration.EnvironmentVariables.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Configuration.FileExtensions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Configuration.FileExtensions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Json.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Configuration.Json.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Configuration.UserSecrets.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Configuration.UserSecrets.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Configuration.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Configuration.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.DependencyInjection.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Diagnostics.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.FileProviders.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.FileProviders.Physical.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.FileProviders.Physical.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.FileSystemGlobbing.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.FileSystemGlobbing.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Hosting.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Hosting.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Hosting.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Logging.Abstractions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Logging.Configuration.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Logging.Configuration.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Logging.Console.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Logging.Console.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Logging.Debug.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Logging.Debug.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Logging.EventLog.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Logging.EventLog.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Logging.EventSource.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Logging.EventSource.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Logging.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Logging.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Options.ConfigurationExtensions.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Options.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Options.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/Microsoft.Extensions.Primitives.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/RulesService.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/RulesService.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/RulesService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/RulesService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/RulesService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/RulesService.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/System.Diagnostics.DiagnosticSource.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/System.Diagnostics.EventLog.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/System.Diagnostics.EventLog.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/System.IO.Pipelines.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/System.IO.Pipelines.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/System.Text.Encodings.Web.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/System.Text.Json.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/runtimes/browser/lib/net8.0/System.Text.Encodings.Web.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Diagnostics.EventLog.Messages.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/runtimes/win/lib/net8.0/System.Diagnostics.EventLog.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ref/RulesService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ref/RulesService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/refint/RulesService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/refint/RulesService.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/RulesService.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net9.0/RulesService.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/RulesService.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net9.0/RulesService.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/RulesService.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net9.0/RulesService.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net9.0/RulesService.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net9.0/RulesService.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/RulesService.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/RulesService.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/RulesService.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/RulesService.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/RulesService.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/obj/RulesService.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +158,10 @@
     &quot;accountId&quot;: &quot;50ba0ce9-591d-4e96-9d18-a2e764be6c91&quot;
   }
 }</component>
+  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
+  <component name="KubernetesApiProvider"><![CDATA[{
+  "isMigrated": true
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -114,6 +173,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Docker.Dockerfile.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "node.js.detected.package.eslint": "true",
@@ -124,7 +184,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected=".NET Launch Settings Profile.RulesService">
+  <component name="RunManager" selected="Docker.Dockerfile">
     <configuration name="RulesService" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
       <option name="PROGRAM_PARAMETERS" value="" />
@@ -158,6 +218,22 @@
         <option name="Build" />
       </method>
     </configuration>
+    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="imageTag" value="rulesservice" />
+          <option name="containerName" value="rulesservice" />
+          <option name="contextFolderPath" value="$PROJECT_DIR$" />
+          <option name="sourceFilePath" value="Dockerfile" />
+        </settings>
+      </deployment>
+      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -168,7 +244,7 @@
       <option name="presentableId" value="Default" />
       <updated>1764415212625</updated>
       <workItem from="1764415213944" duration="730000" />
-      <workItem from="1764415963811" duration="1367000" />
+      <workItem from="1764415963811" duration="1891000" />
     </task>
     <servers />
   </component>

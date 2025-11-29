@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Infrastructure/RateLimiting.Infrastructure.csproj": {}
+    "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/RateLimiting.Infrastructure/RateLimiting.Infrastructure.csproj": {}
   },
   "projects": {
-    "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/RateLimiting.Domain.csproj": {
+    "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/RateLimiting.Domain/RateLimiting.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/RateLimiting.Domain.csproj",
+        "projectUniqueName": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/RateLimiting.Domain/RateLimiting.Domain.csproj",
         "projectName": "RateLimiting.Domain",
-        "projectPath": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/RateLimiting.Domain.csproj",
+        "projectPath": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/RateLimiting.Domain/RateLimiting.Domain.csproj",
         "packagesPath": "/Users/iasonaschristoulakis/.nuget/packages/",
-        "outputPath": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/obj/",
+        "outputPath": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/RateLimiting.Domain/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/iasonaschristoulakis/.nuget/NuGet/NuGet.Config"
@@ -75,14 +75,14 @@
         }
       }
     },
-    "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Infrastructure/RateLimiting.Infrastructure.csproj": {
+    "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/RateLimiting.Infrastructure/RateLimiting.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Infrastructure/RateLimiting.Infrastructure.csproj",
+        "projectUniqueName": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/RateLimiting.Infrastructure/RateLimiting.Infrastructure.csproj",
         "projectName": "RateLimiting.Infrastructure",
-        "projectPath": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Infrastructure/RateLimiting.Infrastructure.csproj",
+        "projectPath": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/RateLimiting.Infrastructure/RateLimiting.Infrastructure.csproj",
         "packagesPath": "/Users/iasonaschristoulakis/.nuget/packages/",
-        "outputPath": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Infrastructure/obj/",
+        "outputPath": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/RateLimiting.Infrastructure/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/iasonaschristoulakis/.nuget/NuGet/NuGet.Config"
@@ -99,8 +99,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/RateLimiting.Domain.csproj": {
-                "projectPath": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/RateLimiting.Domain.csproj"
+              "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/RateLimiting.Domain/RateLimiting.Domain.csproj": {
+                "projectPath": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/RateLimiting.Domain/RateLimiting.Domain.csproj"
               }
             }
           }

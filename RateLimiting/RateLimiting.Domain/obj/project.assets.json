@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/RateLimiting.Domain.csproj",
+      "projectUniqueName": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/RateLimiting.Domain/RateLimiting.Domain.csproj",
       "projectName": "RateLimiting.Domain",
-      "projectPath": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/RateLimiting.Domain.csproj",
+      "projectPath": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/RateLimiting.Domain/RateLimiting.Domain.csproj",
       "packagesPath": "/Users/iasonaschristoulakis/.nuget/packages/",
-      "outputPath": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting.Domain/obj/",
+      "outputPath": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/RateLimiting.Domain/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/iasonaschristoulakis/.nuget/NuGet/NuGet.Config"
