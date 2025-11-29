@@ -1,16 +1,19 @@
-using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using RulesService;
 using StackExchange.Redis;
 
-Host.CreateDefaultBuilder(args)
-    .ConfigureServices((ctx, services) =>
-    {
-        services.AddSingleton<IConnectionMultiplexer>(_ =>
-            ConnectionMultiplexer.Connect(ctx.Configuration.GetConnectionString("Redis") ?? "redis:6379"));
-        services.AddHttpClient(); // for etcd calls
-        services.AddHostedService<RulesSyncWorker>();
-    })
-    .Build()
-    .Run();
+var builder = Host.CreateApplicationBuilder(args);
+
+// Typed client tied to RulesSyncWorker
+builder.Services.AddHttpClient<RulesSyncWorker>((sp, client) =>
+{
+    var cfg = sp.GetRequiredService<IConfiguration>();
+    client.BaseAddress = new Uri(cfg["Etcd:BaseUrl"] ?? "http://etcd:2379");
+    client.Timeout = TimeSpan.FromSeconds(10);
+});
+
+builder.Services.AddSingleton<IConnectionMultiplexer>(_ =>
+    ConnectionMultiplexer.Connect(builder.Configuration.GetConnectionString("Redis") ?? "redis:6379"));
+
+builder.Services.AddHostedService(sp => sp.GetRequiredService<RulesSyncWorker>());
+
+await builder.Build().RunAsync();

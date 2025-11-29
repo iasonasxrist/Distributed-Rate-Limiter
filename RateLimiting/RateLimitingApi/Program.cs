@@ -1,4 +1,3 @@
-using System.Linq;
 using Microsoft.Extensions.Options;
 using RateLimiting.Domain.Contracts;
 using RateLimiting.Infrastructure.Distributed;
@@ -13,7 +12,7 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Add services to the container.
-        
+        builder.Services.AddHttpClient();
         builder.Services.AddOptions<RateLimitingOptions>()
             .Bind(builder.Configuration.GetSection("RateLimiting"))
             .ValidateDataAnnotations()
@@ -37,7 +36,7 @@ public class Program
         var app = builder.Build();
 
         app.UseDistributedRateLimiting();
-        
+
         // Configure the HTTP request pipeline.
         if (app.Environment.IsDevelopment())
         {
