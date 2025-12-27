@@ -2,11 +2,19 @@ using System;
 using RateLimiting.Domain.Contracts;
 using RateLimiting.Infrastructure.Algorithms;
 using RateLimiting.Infrastructure.Options;
+using StackExchange.Redis;
 
 namespace RateLimiting.Infrastructure.Distributed;
 
 public sealed class DefaultRateLimiterFactory : IRateLimiterFactory
 {
+    private readonly IConnectionMultiplexer _redis;
+
+    public DefaultRateLimiterFactory(IConnectionMultiplexer redis)
+    {
+        _redis = redis ?? throw new ArgumentNullException(nameof(redis));
+    }
+
     public IRateLimiter Create(RateLimiterAlgorithmOptions options, RateLimitingOptions globalOptions)
     {
         if (!options.Enabled)
@@ -20,11 +28,11 @@ public sealed class DefaultRateLimiterFactory : IRateLimiterFactory
         return options.Type switch
         {
             RateLimiterAlgorithmType.SlidingWindow =>
-                new SlidingWindowRateLimiter(options.Name, maxRequests, TimeSpan.FromSeconds(windowSeconds)),
+                new RedisSlidingWindowRateLimiter(_redis, options.Name, maxRequests, TimeSpan.FromSeconds(windowSeconds)),
             RateLimiterAlgorithmType.FixedWindow =>
-                new FixedWindowRateLimiter(options.Name, maxRequests, TimeSpan.FromSeconds(windowSeconds)),
+                new RedisFixedWindowRateLimiter(_redis, options.Name, maxRequests, TimeSpan.FromSeconds(windowSeconds)),
             RateLimiterAlgorithmType.TokenBucket =>
-                new TokenBucketRateLimiter(options.Name, options.Capacity > 0 ? options.Capacity : maxRequests,
+                new RedisTokenBucketRateLimiter(_redis, options.Name, options.Capacity > 0 ? options.Capacity : maxRequests,
                     options.RefillRatePerSecond > 0 ? options.RefillRatePerSecond : maxRequests / (double)windowSeconds),
             _ => throw new ArgumentOutOfRangeException(nameof(options), $"Unsupported rate limiter type '{options.Type}'.")
         };

@@ -8,11 +8,14 @@ services:
 
   ratelimiting-service:
     build:
-      context: ./RateLimiting/RateLimitingApi
+      context: ./RateLimiting
+      dockerfile: RateLimitingApi/Dockerfile
     environment:
       ASPNETCORE_URLS: http://+:80
       ConnectionStrings__Redis: redis:6379
-      ConnectionStrings__Database: Host=postgres;Database=ratelimit;Username=postgres;Password=password
+      ConnectionStrings__Database: Host=postgres-db;Database=ratelimit;Username=postgres;Password=password
+      RateLimitingConfig__RedisKey: rate-limiting:options
+      RateLimitingConfig__PollSeconds: "10"
     depends_on: [redis, postgres-db]
 
   redis:
@@ -47,6 +50,8 @@ services:
       Etcd__BaseUrl: http://etcd:2379
       Etcd__PoliciesKey: /v2/keys/rl/policies.json
       Etcd__PollSeconds: "10"
+      RulesSync__RedisKey: rate-limiting:options
+      RulesSync__NotificationChannel: rate-limiting:options:updated
     depends_on: [redis, postgres-db, etcd]
 
   postgres-db:
