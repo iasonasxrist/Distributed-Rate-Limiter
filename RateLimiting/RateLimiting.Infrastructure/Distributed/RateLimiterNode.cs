@@ -26,7 +26,7 @@ public sealed class RateLimiterNode
 
     public RateLimitDecision Evaluate(RequestInfo requestInfo)
     {
-        var clientKey = BuildClientKey(requestInfo);
+        var clientKey = RateLimitingKeyBuilder.Build(requestInfo);
         var pipeline = _pipelines.GetOrAdd(clientKey, _ => CreatePipeline());
         var result = pipeline.Evaluate(requestInfo);
         return result.Allowed
@@ -44,23 +44,4 @@ public sealed class RateLimiterNode
         return new RateLimiterPipeline(limiters);
     }
 
-    private static string BuildClientKey(RequestInfo requestInfo)
-    {
-        if (!string.IsNullOrWhiteSpace(requestInfo.ApiKey))
-        {
-            return $"api:{requestInfo.ApiKey}";
-        }
-
-        if (!string.IsNullOrWhiteSpace(requestInfo.UserId))
-        {
-            return $"user:{requestInfo.UserId}";
-        }
-
-        if (!string.IsNullOrWhiteSpace(requestInfo.ClientId))
-        {
-            return $"client:{requestInfo.ClientId}";
-        }
-
-        return $"anon:{requestInfo.RequestId}";
-    }
 }

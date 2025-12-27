@@ -14,6 +14,6 @@ builder.Services.AddHttpClient<RulesSyncWorker>((sp, client) =>
 builder.Services.AddSingleton<IConnectionMultiplexer>(_ =>
     ConnectionMultiplexer.Connect(builder.Configuration.GetConnectionString("Redis") ?? "redis:6379"));
 
-builder.Services.AddHostedService(sp => sp.GetRequiredService<RulesSyncWorker>());
+builder.Services.AddHostedService<RulesSyncWorker>();
 
 await builder.Build().RunAsync();
