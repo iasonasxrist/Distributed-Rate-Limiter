@@ -1,5 +1,4 @@
 using System.Text.Json;
-using Microsoft.Extensions.Configuration;
 using StackExchange.Redis;
 
 namespace RulesService;
@@ -11,8 +10,9 @@ public sealed class RulesSyncWorker(
     IConnectionMultiplexer redis) : BackgroundService
 {
     private readonly ILogger<RulesSyncWorker> _logger = logger;
-    private readonly HttpClient _httpClient = httpClient;
     private readonly IConnectionMultiplexer _redis = redis;
+    private readonly HttpClient _httpClient = httpClient;
+    private readonly string _etcdBaseUrl = configuration["Etcd:BaseUrl"]!;
     private readonly string _policiesKey = configuration["Etcd:PoliciesKey"] ?? "/v2/keys/rl/policies.json";
     private readonly string _redisKey = configuration["RulesSync:RedisKey"] ?? "rate-limiting:options";
     private readonly string _notificationChannel =
@@ -41,8 +41,17 @@ public sealed class RulesSyncWorker(
 
     private async Task SyncOnce(CancellationToken stoppingToken)
     {
-        using var resp = await _httpClient.GetAsync(_policiesKey, stoppingToken);
+        var requestUri = new Uri(new Uri(_etcdBaseUrl), _policiesKey);
+        var resp = await GetWithRetryAsync(requestUri, stoppingToken);
         resp.EnsureSuccessStatusCode();
+        if (!resp.IsSuccessStatusCode)
+        {
+            _logger.LogWarning(
+                "Etcd request failed with status {StatusCode} for {RequestUri}",
+                resp.StatusCode,
+                requestUri);
+            return;
+        }
         using var root = JsonDocument.Parse(await resp.Content.ReadAsStringAsync(stoppingToken));
         if (!root.RootElement.TryGetProperty("node", out var node) ||
             !node.TryGetProperty("value", out var valueEl))
@@ -60,7 +69,33 @@ public sealed class RulesSyncWorker(
 
         var db = _redis.GetDatabase();
         await db.StringSetAsync(_redisKey, policiesJson);
-        await db.PublishAsync(_notificationChannel, "updated");
+        await db.PublishAsync(_notificationChannel!, "updated");
         _logger.LogInformation("Rate limiting policies synced to Redis key {RedisKey}", _redisKey);
+    }
+    
+    private async Task<HttpResponseMessage> GetWithRetryAsync(Uri requestUri, CancellationToken stoppingToken)
+    {
+        const int maxAttempts = 3;
+        var delay = TimeSpan.FromSeconds(1);
+
+        for (var attempt = 1; attempt <= maxAttempts; attempt++)
+        {
+            try
+            {
+                return await _httpClient.GetAsync(requestUri, stoppingToken);
+            }
+            catch (HttpRequestException ex) when (attempt < maxAttempts)
+            {
+                _logger.LogWarning(
+                    ex,
+                    "Etcd request attempt {Attempt} failed; retrying in {DelaySeconds}s",
+                    attempt,
+                    delay.TotalSeconds);
+                await Task.Delay(delay, stoppingToken);
+                delay = TimeSpan.FromSeconds(delay.TotalSeconds * 2);
+            }
+        }
+
+        return await _httpClient.GetAsync(requestUri, stoppingToken);
     }
 }
