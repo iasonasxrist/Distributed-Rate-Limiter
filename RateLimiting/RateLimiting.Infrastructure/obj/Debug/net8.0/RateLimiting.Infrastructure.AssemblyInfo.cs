@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RateLimiting.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c03ce5d4097bdff334103b29ec7c42bb32c1ab1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e3fa605b7da2b3b62e8c96f1e7f45a8edf7cb155")]
 [assembly: System.Reflection.AssemblyProductAttribute("RateLimiting.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RateLimiting.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
