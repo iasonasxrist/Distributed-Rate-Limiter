@@ -10,7 +10,7 @@ public sealed class RedisSlidingWindowRateLimiter : IRateLimiter
     private readonly long _windowSizeMs;
     private readonly int _maxRequests;
 
-    private static readonly LuaScript SlidingWindowScript = LuaScript.Prepare(@"
+    private const string SlidingWindowScript = @"
 local now = tonumber(ARGV[1])
 local window = tonumber(ARGV[2])
 redis.call('ZREMRANGEBYSCORE', KEYS[1], 0, now - window)
@@ -27,7 +27,7 @@ if oldest[2] then
   return {0, retry}
 end
 return {0, window}
-");
+";
 
     public RedisSlidingWindowRateLimiter(IConnectionMultiplexer redis, string name, int maxRequests, TimeSpan windowSize)
     {

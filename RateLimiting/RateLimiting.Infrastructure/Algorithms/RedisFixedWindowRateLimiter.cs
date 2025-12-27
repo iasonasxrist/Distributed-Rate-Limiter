@@ -10,7 +10,7 @@ public sealed class RedisFixedWindowRateLimiter : IRateLimiter
     private readonly long _windowSizeMs;
     private readonly int _maxRequests;
 
-    private static readonly LuaScript FixedWindowScript = LuaScript.Prepare(@"
+    private const string FixedWindowScript = @"
 local current = redis.call('INCR', KEYS[1])
 if current == 1 then
   redis.call('PEXPIRE', KEYS[1], ARGV[1])
@@ -24,7 +24,7 @@ local resetAt = (math.floor(now / window) + 1) * window
 local retry = resetAt - now
 if retry < 0 then retry = 0 end
 return {0, retry}
-");
+";
 
     public RedisFixedWindowRateLimiter(IConnectionMultiplexer redis, string name, int maxRequests, TimeSpan windowSize)
     {
