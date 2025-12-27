@@ -11,7 +11,7 @@ public sealed class RedisTokenBucketRateLimiter : IRateLimiter
     private readonly double _refillRatePerSecond;
     private readonly long _ttlMs;
 
-    private static readonly LuaScript TokenBucketScript = LuaScript.Prepare(@"
+    private const string TokenBucketScript = @"
 local capacity = tonumber(ARGV[1])
 local refill = tonumber(ARGV[2])
 local now = tonumber(ARGV[3])
@@ -40,7 +40,7 @@ end
 redis.call('HMSET', KEYS[1], 'tokens', tokens, 'ts', ts)
 redis.call('PEXPIRE', KEYS[1], ttl)
 return {allowed, retry}
-");
+";
 
     public RedisTokenBucketRateLimiter(IConnectionMultiplexer redis, string name, int capacity, double refillRatePerSecond)
     {
