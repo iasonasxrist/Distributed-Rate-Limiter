@@ -3,8 +3,7 @@ using StackExchange.Redis;
 
 var builder = Host.CreateApplicationBuilder(args);
 
-// Typed client tied to RulesSyncWorker
-builder.Services.AddHttpClient<RulesSyncWorker>((sp, client) =>
+builder.Services.AddHttpClient((sp, client) =>
 {
     var cfg = sp.GetRequiredService<IConfiguration>();
     client.BaseAddress = new Uri(cfg["Etcd:BaseUrl"] ?? "http://etcd:2379");
