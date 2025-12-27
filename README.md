@@ -15,13 +15,13 @@ A Docker-based distributed rate limiting system built with ASP.NET Core, Redis, 
 
 ## Services and Ports
 
-| Service | Purpose | Port (host -> container) |
-|--------|---------|---------------------------|
-| load-balancer | NGINX reverse proxy | `8080:80` |
-| ratelimiting-service | API | `8079-8081:80` (replicas) |
-| rules-daemon-service | Policy sync worker | `8082:80` |
-| redis | Cache / counters | `6379:6379` |
-| etcd | Policy store | `2379:2379`, `2380:2380` |
+| Service              | Purpose             | Port (host -> container)  |
+| -------------------- | ------------------- | ------------------------- |
+| load-balancer        | NGINX reverse proxy | `8080:80`                 |
+| ratelimiting-service | API                 | `8079-8081:80` (replicas) |
+| rules-daemon-service | Policy sync worker  | `8082:80`                 |
+| redis                | Cache / counters    | `6379:6379`               |
+| etcd                 | Policy store        | `2379:2379`, `2380:2380`  |
 
 ## Prerequisites
 
@@ -218,7 +218,19 @@ docker compose restart load-balancer
        http://localhost:8080/WeatherForecast
    done
    ```
-3. **Confirm 429s and headers**
+3. **Concurrent requests **
+    ```bash 
+   for client in alice bob; do
+    echo "Client: $client"
+    for i in {1..6}; do
+    curl -s -o /dev/null -w "%{http_code}\n" \
+      -H "X-Client-Id: $client" \
+      http://localhost:8080/WeatherForecast
+    done
+    done
+    ```
+
+1. **Confirm 429s and headers**
    - Expect `429` after limits are exceeded.
    - Check `Retry-After`, `X-RateLimit-Node`, `X-RateLimit-Algorithm`.
 
