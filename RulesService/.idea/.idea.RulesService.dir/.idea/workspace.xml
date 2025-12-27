@@ -8,20 +8,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d42d9e4-0483-4ee3-b6b2-5956615aaf5e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.RulesService.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.RulesService.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/RulesService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/RulesService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net8.0/RulesService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net8.0/RulesService.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/RulesService.sourcelink.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/ref/RulesService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/ref/RulesService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net8.0/refint/RulesService.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net8.0/refint/RulesService.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="2d42d9e4-0483-4ee3-b6b2-5956615aaf5e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -128,7 +115,7 @@
       <option name="presentableId" value="Default" />
       <updated>1764415212625</updated>
       <workItem from="1764415213944" duration="730000" />
-      <workItem from="1764415963811" duration="3443000" />
+      <workItem from="1764415963811" duration="3627000" />
     </task>
     <servers />
   </component>

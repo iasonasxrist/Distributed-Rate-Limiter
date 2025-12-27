@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RateLimiting.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d926bad21e9e7eae285f8b51368156bf4ab0abb1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c03ce5d4097bdff334103b29ec7c42bb32c1ab1")]
 [assembly: System.Reflection.AssemblyProductAttribute("RateLimiting.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RateLimiting.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
