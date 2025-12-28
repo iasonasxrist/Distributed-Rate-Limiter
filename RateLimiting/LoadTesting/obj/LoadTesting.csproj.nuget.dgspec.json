@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/RateLimiting.Domain/RateLimiting.Domain.csproj": {}
+    "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/LoadTesting/LoadTesting.csproj": {}
   },
   "projects": {
-    "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/RateLimiting.Domain/RateLimiting.Domain.csproj": {
+    "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/LoadTesting/LoadTesting.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/RateLimiting.Domain/RateLimiting.Domain.csproj",
-        "projectName": "RateLimiting.Domain",
-        "projectPath": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/RateLimiting.Domain/RateLimiting.Domain.csproj",
+        "projectUniqueName": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/LoadTesting/LoadTesting.csproj",
+        "projectName": "LoadTesting",
+        "projectPath": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/LoadTesting/LoadTesting.csproj",
         "packagesPath": "/Users/iasonaschristoulakis/.nuget/packages/",
-        "outputPath": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/RateLimiting.Domain/obj/",
+        "outputPath": "/Users/iasonaschristoulakis/Documents/ASP_NET/RateLimitingProject/RateLimiting/LoadTesting/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/iasonaschristoulakis/.nuget/NuGet/NuGet.Config"
@@ -58,6 +58,10 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[8.0.15, 8.0.15]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.osx-arm64",
               "version": "[8.0.15, 8.0.15]"
             },
             {

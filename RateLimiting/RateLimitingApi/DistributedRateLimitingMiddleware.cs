@@ -32,7 +32,15 @@ public sealed class DistributedRateLimitingMiddleware
     {
         var requestInfo = BuildRequestInfo(context, _options.ClientIdHeader);
         var decision = _rateLimiter.ShouldAllow(requestInfo);
-
+        _logger.LogInformation(
+            "Rate limit decision: allowed={Allowed} clientId={ClientId} path={Path} method={Method} node={NodeId} algorithm={Algorithm}",
+            decision.Allowed,
+            requestInfo.ClientId,
+            requestInfo.Path,
+            requestInfo.Method,
+            decision.NodeId,
+            decision.Algorithm);
+        
         if (!decision.Allowed)
         {
             await DenyRequestAsync(context, decision);
