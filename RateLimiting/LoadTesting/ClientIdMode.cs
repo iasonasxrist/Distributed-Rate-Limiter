@@ -4,5 +4,6 @@ public enum ClientIdMode
 {
     Single,
     Unique,
-    Auto
+    Auto,
+    Pool
 }

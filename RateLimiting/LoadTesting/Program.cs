@@ -4,11 +4,13 @@ using System.Net.Http.Headers;
 using LoadTesting;
 
 var defaults = new LoadTestOptions(
-    Url :"http://localhost:8080/WeatherForecast",
-    TotalRequests :200,
-    Concurrency :2,
-    ClientId :"load-test-id",
+    Url: "http://localhost:8080/WeatherForecast",
+    TotalRequests: 10000,
+    Concurrency: 5,
+    ClientId: "load-test-id",
+    ClientIdPoolSize: 10,
     ClientIdMode.Unique);
+;
 
 
 LoadTestOptions options;
@@ -20,7 +22,8 @@ if (args.Length == 0)
         TotalRequests: PromptInt("TotalRequests", defaults.TotalRequests),
         Concurrency: PromptInt("Concurrency", defaults.Concurrency),
         ClientId: PromptOptionalString("X-Client-Id base (empty=auto)",defaults.ClientId ),
-        ClientIdMode:PromptClientIdMode(defaults.ClientIdMode)
+        ClientIdMode:PromptClientIdMode(defaults.ClientIdMode),
+        ClientIdPoolSize: PromptInt("Client ID pool size", defaults.ClientIdPoolSize)
         );
 }
 else
@@ -30,7 +33,10 @@ else
         TotalRequests: args.Length > 1 && Int32.TryParse( args[1], out var parsedTotal) ? parsedTotal: defaults.TotalRequests,
         Concurrency: args.Length>2 && Int32.TryParse( args[2], out var parsedConcurrency) ? parsedConcurrency: defaults.Concurrency ,
         ClientId: args.Length>3 ? args[3]: defaults.ClientId,
-        ClientIdMode: args.Length> 4 ? ParseClientIdMode(args[4]) :defaults.ClientIdMode);
+        ClientIdMode: args.Length> 4 ? ParseClientIdMode(args[4]) :defaults.ClientIdMode,
+    ClientIdPoolSize: args.Length > 5 && int.TryParse(args[5], out var parsedPoolSize)
+        ? parsedPoolSize
+        : defaults.ClientIdPoolSize);
 }
 
 var url = options.Url;
@@ -38,6 +44,7 @@ var totalRequests = options.TotalRequests;
 var concurrency = options.Concurrency;
 var clientId = options.ClientId;
 var clientIdMode = options.ClientIdMode;
+var clientIdPoolSize = Math.Max(1, options.ClientIdPoolSize);
 
 Console.WriteLine("Load test settings: ");
 Console.WriteLine($"URL: {url}");
@@ -45,6 +52,8 @@ Console.WriteLine($"TotalRequests: {totalRequests}");
 Console.WriteLine($"Concurrency: {concurrency}");
 Console.WriteLine($"X-Client-Id: {clientId}");
 Console.WriteLine($"  X-Client-Id mode: {clientIdMode}");
+Console.WriteLine($"  X-Client-Id pool size: {clientIdPoolSize}");
+
 
 using var httpClient = new HttpClient();
 httpClient.BaseAddress = new Uri(url);
@@ -74,6 +83,7 @@ var tasks = Enumerable.Range(0, totalRequests).Select(async _ =>
                 url,
                 clientId,
                 clientIdMode,
+                clientIdPoolSize,
                 Interlocked.Increment(ref requestCounter));
         requestStopWatch.Stop();
         requestStopWatch.Stop();
@@ -155,6 +165,13 @@ static ClientIdMode ParseClientIdMode(string input)
     {
         return ClientIdMode.Auto;
     }
+    
+    
+    if (trimmed.Equals("pool", StringComparison.OrdinalIgnoreCase))
+    {
+        return ClientIdMode.Pool;
+    }
+
 
     return ClientIdMode.Single;
 }
@@ -164,13 +181,21 @@ static Task<HttpResponseMessage> SendWithClientIdAsync(
     string url,
     string baseClientId,
     ClientIdMode clientIdMode,
+    int poolSize,
     int index)
 {
-    var resolvedBase = string.IsNullOrWhiteSpace(baseClientId) ? $"client-{Guid.NewGuid():N}" : baseClientId;
-    var clientIdValue = clientIdMode == ClientIdMode.Auto
-        ? $"client-{Guid.NewGuid():N}"
-        : $"{resolvedBase}-{index}";
+int _clientIdCounter = 0;
+    var resolvedBase = string.IsNullOrWhiteSpace(baseClientId)
+        ? $"client-{++_clientIdCounter}"
+        : baseClientId;
+    var clientIdValue = clientIdMode switch
+    {
+        ClientIdMode.Auto => $"client-{Guid.NewGuid():N}",
+        ClientIdMode.Pool => $"{resolvedBase}-{((index - 1) % poolSize) + 1}",
+        _ => $"{resolvedBase}-{index}"
+    };
     var request = new HttpRequestMessage(HttpMethod.Get, url);
     request.Headers.TryAddWithoutValidation("X-Client-Id", clientIdValue);
     return httpClient.SendAsync(request);
 }
+
